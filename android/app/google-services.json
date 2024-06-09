@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695393802145",
+    "project_id": "driving-licence-325f7",
+    "storage_bucket": "driving-licence-325f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695393802145:android:e1d1c629833dbf6d139de0",
+        "android_client_info": {
+          "package_name": "com.pixelpoint.driving_license"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByyy8CWeJbS5rJ3gF_ICpJ8lG3bg5r7f4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
