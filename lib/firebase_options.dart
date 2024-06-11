@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -44,38 +45,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC4k-3Q1icp6OLKmQhzFTeIRWPi2ZO5Yyo',
-    appId: '1:695393802145:web:ce68c0a03024eb4a139de0',
-    messagingSenderId: '695393802145',
-    projectId: 'driving-licence-325f7',
-    authDomain: 'driving-licence-325f7.firebaseapp.com',
-    storageBucket: 'driving-licence-325f7.appspot.com',
-    measurementId: 'G-TN4C5TT45B',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    authDomain: '',
+    storageBucket: '',
+    measurementId: '',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyByyy8CWeJbS5rJ3gF_ICpJ8lG3bg5r7f4',
-    appId: '1:695393802145:android:e1d1c629833dbf6d139de0',
-    messagingSenderId: '695393802145',
-    projectId: 'driving-licence-325f7',
-    storageBucket: 'driving-licence-325f7.appspot.com',
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY'] ?? 'API_KEY not found',
+    appId: dotenv.env['APP_ID'] ?? 'APP_ID not found',
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID'] ?? 'MESSAGING_SENDER_ID not found',
+    projectId: dotenv.env['PROJECT_ID'] ?? 'PROJECT_ID not found',
+    storageBucket: dotenv.env['STORAGE_BUCKET'] ?? 'STORAGE_BUCKET not found',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA5oeLqQif6F0EdQqN3U_1PriGdj4WOvy0',
-    appId: '1:695393802145:ios:a7cd12c1d2783191139de0',
-    messagingSenderId: '695393802145',
-    projectId: 'driving-licence-325f7',
-    storageBucket: 'driving-licence-325f7.appspot.com',
-    iosBundleId: 'com.pixelpoint.drivingLicense',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
+    iosBundleId: '',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA5oeLqQif6F0EdQqN3U_1PriGdj4WOvy0',
-    appId: '1:695393802145:ios:61a6a18e691fbcf1139de0',
-    messagingSenderId: '695393802145',
-    projectId: 'driving-licence-325f7',
-    storageBucket: 'driving-licence-325f7.appspot.com',
-    iosBundleId: 'com.pixelpoint.drivingLicense.RunnerTests',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
+    iosBundleId: '',
   );
 }

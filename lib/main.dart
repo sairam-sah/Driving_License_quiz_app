@@ -3,13 +3,21 @@ import 'package:driving_license/app/modules/repositary/firebasemessaging.dart';
 import 'package:driving_license/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options:DefaultFirebaseOptions.currentPlatform );
+   
+   try {
+    await dotenv.load(fileName: ".env");
+    print('Env file loaded successfully');
+  } catch (e) {
+    print('Could not load .env file: $e');
+  }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseApi().initNotification();
   Get.put(AuthenticationRepository());
   // fianl isAuthenticated.value =false.obs;
@@ -22,8 +30,8 @@ Future<void> main() async {
   //   } else {
   //   initial = Routes.HOME;
   //   }
-  
-    runApp(
+
+  runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Application",
